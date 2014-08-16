@@ -1,0 +1,22 @@
+<?php
+
+echo 'Gracias por introducir una nueva frase...';
+
+$spanish = $_POST['spanish'];
+$english_1 = $_POST['english_1'];
+$english_2 = $_POST['english_2'];
+$hint_1 = $_POST['hint_1'];
+$hint_2 = $_POST['hint_2'];
+
+$dbc = mysqli_connect('localhost', 'root', 'admin', 'transdb')
+    or die('Error connecting to MySQL server.');
+
+$query = "INSERT INTO sentences (spanish_sen, trans_1, trans_2, hint_1, hint_2)
+VALUES ('$spanish', '$english_1', '$english_2', '$hint_1', '$hint_2')";
+
+$result = mysqli_query($dbc, $query)
+    or die('Error querying database.');
+
+mysqli_close($dbc);
+
+?>
