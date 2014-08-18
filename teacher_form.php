@@ -2,12 +2,17 @@
 <html>
 <head>
     <title>Teacher Form</title>
-    <meta charset="utf-8">
+    <!--<meta charset="utf-8">-->
 </head>
 
 <body>
 
-    <h2>This is the teachers' form for the simple translation exercise ñ¡</h2>
+    <?php
+    $a = getdate();
+    printf('%s %d, %d',$a['month'],$a['mday'],$a['year']);
+    ?>
+
+    <h1>Teachers' Form</h1>
 
     <form action="processing.php" method="post" accept-charset="utf-8">
         <label for="spanish">Spanish:</label><br>
@@ -25,8 +30,10 @@
         <label for="hint 2">Hint 2:</label><br>
         <textarea id="hint_2" name="hint_2" rows="3" cols="100" maxlength="300"></textarea><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="submit">
     </form>
+
+
 
 </body>
 
