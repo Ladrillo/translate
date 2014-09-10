@@ -15,6 +15,7 @@ VALUES ('This is a test', 'Esto es un test', 'Esto es una prueba', 'Pista 1', 'p
 
 DROP TABLE sentences;
 SELECT * FROM sentences;
+DELETE FROM sentences;
 
 ALTER TABLE sentences CHARACTER SET utf8;
 

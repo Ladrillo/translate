@@ -1,4 +1,4 @@
-<form action="index.php" method="post">
+<form action="" method="post">
 
     <label for="spanish">Spanish:<br><textarea id="spanish" name="spanish" rows="3" cols="100" maxlength="200"></textarea></label><br>
     <label for="english 1">Translation 1: <br><textarea id="english_1" name="english_1" rows="3" cols="100" maxlength="200"></textarea></label><br>
@@ -8,3 +8,5 @@
     <input type="submit" value="submit">
 
 </form>
+
+<p><?php echo $falo; ?></p>

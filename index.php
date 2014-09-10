@@ -1,14 +1,28 @@
 <?php
 
-$spanish = $_REQUEST['spanish'];
-$english_1 = $_REQUEST['english_1'];
-$english_2 = $_REQUEST['english_2'];
-$hint_1 = $_REQUEST['hint_1'];
-$hint_2 = $_REQUEST['hint_2'];
+include 'templates/header.html.php'; // html navigation to sections
+include 'includes/dbconnect.inc.php'; //connection to the database
+include 'templates/output.html.php'; //displays success, or failure & error
 
-echo "You just entered: " .
-htmlspecialchars($spanish, ENT_QUOTES, 'UTF-8') . " " .
-htmlspecialchars($english_1, ENT_QUOTES, 'UTF-8') . " " .
-htmlspecialchars($english_2, ENT_QUOTES, 'UTF-8') . " " .
-htmlspecialchars($hint_1, ENT_QUOTES, 'UTF-8') . " " .
-htmlspecialchars($hint_2, ENT_QUOTES, 'UTF-8') . ".";
+if (isset($_GET['addsentence']))
+{
+    include 'templates/introform.html.php';
+    include 'templates/output.html.php';
+    exit();
+}
+
+if (isset($_GET['showall']))
+{
+    include 'includes/selectall.inc.php';
+    include 'templates/output.html.php';
+    include 'templates/sentences.html.php';
+    exit();
+}
+
+if (isset($_REQUEST['spanish']))
+{
+    include 'includes/insertsentence.inc.php';
+    include 'templates/output.html.php';
+}
+
+
