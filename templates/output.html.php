@@ -7,7 +7,9 @@
 </head>
 
 <body>
-    <p><?php echo $output; ?></p>
+    <div class="container">
+        <p><?php echo $output; ?></p>
+    </div>
 </body>
 
 </html>
