@@ -3,39 +3,53 @@
 include 'templates/header.html.php'; //html navigation to sections
 
 include 'includes/dbconnect.inc.php'; //connection to the database
-include 'templates/output.html.php'; //was connection to database established correctly?
+//include 'templates/output.html.php'; //was connection to database established correctly?
 
-if (isset($_GET['addsentence'])) //this tracks if link with href="?addsentence" is clicked
+if(isset($_GET['addsentence'])) //this tracks if link with href="?addsentence" is clicked
 {
-    include 'templates/formquestion.php'; //display form
+    include 'templates/mainform.php'; //display form
     exit();
 }
 
-//if ((isset($_GET['showall'])) || $fuckme = 1)//this tracks if link with href="?showall" is clicked
-if (isset($_GET['showall']))
+if(isset($_GET['showall'])) //this tracks if link with href="?showall" is clicked
 {
-    include 'includes/selectquestions.inc.php'; //this queries the database
-    include 'templates/output.html.php'; //were the results form query fetched OK?
-    include 'templates/displayquestions.html.php'; // this outputs rows to html
-    exit();
+    include 'includes/selectrows.inc.php'; //this queries the database
+    //include 'templates/output.html.php'; //were the results form query fetched OK?
+    include 'templates/displayrows.html.php'; // this outputs rows to html
 }
 
-if (isset($_POST['spanish'])) //this tracks if intro form has been submitted
+if(isset($_POST['spanish'])) //this tracks if intro form has been submitted
 {
-    include 'includes/insertquestion.inc.php'; //display html form
+    include 'includes/insertrow.inc.php'; //display html form
     include 'templates/output.html.php'; //Was the form input submitted OK to the database?
+    //include 'includes/selectrows.inc.php'; //this queries the database
+    //include 'templates/displayrows.html.php'; // this outputs rows to html
 }
 
-if (isset($_GET['deletesen'])) //this tracks if form with ?deletesen has been submitted
+if(isset($_GET['deletesen'])) //this tracks if form with ?deletesen has been submitted
 {
-    include 'includes/deletequestion.inc.php';
+    include 'includes/deleterow.inc.php'; //this deletes question
+    include 'templates/output.html.php'; //was the question deleted OK?
+    //include 'includes/selectrows.inc.php'; //this queries the database
+    //include 'templates/displayrows.html.php'; // this outputs rows to html
 }
 
+if(isset($_GET['test'])) //this tracks if link with href="?test" is clicked
+{
+    include 'includes/quiz.inc.php'; //this has to select a single question from database (in progress)
+    include 'templates/displayquiz.html.php'; //this has to display questions in succession as per test.inc control
+}
+
+if(isset($_POST['polla'])) //this tracks if test form has been submitted
+{
+    include 'includes/processquiz.inc.php';
+}
 
 
 
 /*
 header('Location: .');
+header("Location: http://www.google.com");
 exit();
 //this code will redirect us back to the controller from any template or include
  */

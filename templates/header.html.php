@@ -14,8 +14,9 @@
         <header>
         <h1>This is my first Webapp</h1>
         <ul>
-            <li><a href="?addsentence">Add a new sentence</a></li>
-            <li><a href="?showall">Show me my sentences</a></li>
+            <li><a href="?addsentence">Add new question to database</a></li>
+            <li><a href="?showall">Display all questions in database</a></li>
+            <li><a href="?test">Run a quiz</a></li>
         </ul>
         </header>
     </div>
