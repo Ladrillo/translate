@@ -8,14 +8,12 @@
 
 <body>
     <div class="container">
-        <?php foreach ($sentences as $sentence): ?>
-            <blockquote>
-                <p>
-                    <?php echo
-                    htmlspecialchars($sentence['spanish_sen'], ENT_QUOTES, 'utf-8'); ?>
-                </p>
-            </blockquote>
-        <?php endforeach; ?>
+        <p>Aquí esta tu preguntita:</p>
+        <blockquote>
+            <p>
+                <?php echo $row["spanish_sen"]; ?>
+            </p>
+        </blockquote>
     </div>
     <div class="container">
         <form action="?" method="post">
@@ -26,3 +24,6 @@
 </body>
 
 </html>
+
+<?php
+

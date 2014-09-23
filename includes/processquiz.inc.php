@@ -1,18 +1,18 @@
 <?php
+/*
+echo $_POST['polla'];
+echo '</br>';
+echo $row["spanish_sen"];
+*/
 
-$process = 'I am the file which processes your test';
 
-$limit = 1;
+if($_POST['polla'] == $row["spanish_sen"]) {
 
-$sql = "SELECT spanish_sen FROM sentences LIMIT $limit";
-
-if($_POST['polla'] == 'aa') {
-
-    echo 'There you go!';
+    $andtheansweris = 'There you go!';
 }
 
 else {
 
-    echo 'Wrong answer!';
+    $andtheansweris = 'Wrong answer!';
 }
 

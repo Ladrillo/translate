@@ -1,11 +1,8 @@
 <?php
 
-echo 'aqui esta tu preguntita:';
-$limit = 1;
-
 try
 {
-    $sql = "SELECT spanish_sen FROM sentences LIMIT $limit";
+    $sql = "SELECT spanish_sen FROM sentences WHERE id=86";
     $result = $pdo->query($sql);
 }
 
@@ -14,9 +11,16 @@ catch (PDOException $e)
     $output = 'Error fetching results: ' . $e->getMessage();
 }
 
-foreach ($result as $row)
-{
-    $sentences[] = array('spanish_sen' => $row['spanish_sen']);
-}
+$row = $result->fetch();
+
+/*
+
+var_dump($result);
+echo '</br>';
+echo '</br>';
+var_dump($row);
+echo '</br>';
+echo '</br>';
+echo $row["spanish_sen"];
 
 

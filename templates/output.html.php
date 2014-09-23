@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <p><?php echo $output; ?></p>
+        <h1><?php echo $andtheansweris ?></h1>
     </div>
 </body>
 

@@ -8,19 +8,19 @@ include 'includes/dbconnect.inc.php'; //connection to the database
 if(isset($_GET['addsentence'])) //this tracks if link with href="?addsentence" is clicked
 {
     include 'templates/mainform.php'; //display form
-    exit();
+    //exit();
 }
 
 if(isset($_GET['showall'])) //this tracks if link with href="?showall" is clicked
 {
     include 'includes/selectrows.inc.php'; //this queries the database
-    //include 'templates/output.html.php'; //were the results form query fetched OK?
+    include 'templates/output.html.php'; //were the results form query fetched OK?
     include 'templates/displayrows.html.php'; // this outputs rows to html
 }
 
 if(isset($_POST['spanish'])) //this tracks if intro form has been submitted
 {
-    include 'includes/insertrow.inc.php'; //display html form
+    include 'includes/insertrow.inc.php'; //insert row into database
     include 'templates/output.html.php'; //Was the form input submitted OK to the database?
     //include 'includes/selectrows.inc.php'; //this queries the database
     //include 'templates/displayrows.html.php'; // this outputs rows to html
@@ -36,13 +36,15 @@ if(isset($_GET['deletesen'])) //this tracks if form with ?deletesen has been sub
 
 if(isset($_GET['test'])) //this tracks if link with href="?test" is clicked
 {
-    include 'includes/quiz.inc.php'; //this has to select a single question from database (in progress)
+    include 'includes/quiz.inc.php'; //this retrieves a row to compare with user input
     include 'templates/displayquiz.html.php'; //this has to display questions in succession as per test.inc control
 }
 
 if(isset($_POST['polla'])) //this tracks if test form has been submitted
 {
-    include 'includes/processquiz.inc.php';
+    include 'includes/quiz.inc.php'; //this retrieves a row to compare with user input
+    include 'includes/processquiz.inc.php'; //this compares user answer with row
+    include 'templates/output.html.php';
 }
 
 
