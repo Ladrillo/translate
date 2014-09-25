@@ -1,12 +1,6 @@
 <?php
-/*
-echo $_POST['polla'];
-echo '</br>';
-echo $row["spanish_sen"];
-*/
 
-
-if($_POST['polla'] == $row["spanish_sen"]) {
+if($_POST['polla'] == $row["qtext1"]) {
 
     $andtheansweris = 'There you go!';
 }

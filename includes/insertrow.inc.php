@@ -16,20 +16,20 @@ try
     $pdo->exec($sql);
 */
 
-    $sql = "INSERT INTO sentences SET
-        spanish_sen=:spanish,
-        trans_1=:english_1,
-        trans_2=:english_2,
-        hint_1=:hint_1,
-        hint_2=:hint_2";
+    $sql = "INSERT INTO questions SET
+        qtext1=:qtext1,
+        qtext2=:qtext2,
+        answ1=:answ1,
+        answ2=:answ2,
+        hint=:hint";
 
     $sqlprep = $pdo->prepare($sql);
 
-    $sqlprep->bindValue(':spanish', $_POST['spanish']);
-    $sqlprep->bindValue(':english_1', $_POST['english_1']);
-    $sqlprep->bindValue(':english_2', $_POST['english_2']);
-    $sqlprep->bindValue(':hint_1', $_POST['hint_1']);
-    $sqlprep->bindValue(':hint_2', $_POST['hint_2']);
+    $sqlprep->bindValue(':qtext1', $_POST['qtext1']);
+    $sqlprep->bindValue(':qtext2', $_POST['qtext2']);
+    $sqlprep->bindValue(':answ1', $_POST['answ1']);
+    $sqlprep->bindValue(':answ2', $_POST['answ2']);
+    $sqlprep->bindValue(':hint', $_POST['hint']);
 
     $sqlprep->execute();
 

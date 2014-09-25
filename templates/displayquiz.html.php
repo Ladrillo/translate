@@ -11,7 +11,7 @@
         <p>Aquí esta tu preguntita:</p>
         <blockquote>
             <p>
-                <?php echo $row["spanish_sen"]; ?>
+                <?php echo $row["qtext1"]; ?>
             </p>
         </blockquote>
     </div>

@@ -2,7 +2,7 @@
 
 try
 {
-    $sql = 'DELETE FROM sentences WHERE id = :id';
+    $sql = 'DELETE FROM questions WHERE id = :id';
     $sqlprep = $pdo->prepare($sql);
     $sqlprep->bindValue(':id', $_POST['id']);
     $sqlprep->execute();

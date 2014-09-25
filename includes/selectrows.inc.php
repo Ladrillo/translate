@@ -2,7 +2,7 @@
 
 try
 {
-    $sql = 'SELECT id, spanish_sen, trans_1, trans_2, hint_1, hint_2 FROM sentences';
+    $sql = 'SELECT id, qtext1, qtext2, answ1, answ2, hint FROM questions';
     $result = $pdo->query($sql);
     //$output = var_dump($result);
 }
@@ -14,7 +14,7 @@ catch (PDOException $e)
 
 foreach ($result as $row)
 {
-    $sentences[] = array('id' => $row['id'], 'spanish_sen' => $row['spanish_sen'], 'trans_1' => $row['trans_1'], 'trans_2' => $row['trans_2'],
-    'hint_1' => $row['hint_1'], 'hint_2' => $row['hint_2']);
+    $sentences[] = array('id' => $row['id'], 'qtext1' => $row['qtext1'], 'qtext2' => $row['qtext2'], 'answ1' => $row['answ1'],
+    'answ2' => $row['answ2'], 'hint' => $row['hint']);
     //$output = var_dump($sentences);
 }

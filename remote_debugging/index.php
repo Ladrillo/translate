@@ -1,9 +1,23 @@
 <?php
+echo 'what is going on??';
 
+try
+{
+    $pdo = new PDO('mysql:host=localhost;dbname=inglespa_db', 'inglespa_user', 'admin01');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec('SET NAMES "utf8"');
+    $output = 'Database connection established!';
+}
+catch (PDOException $e)
+{
+    $output = 'Unable to connect to the database server: ' . $e->getMessage();
+}
+
+echo '<br>';
+echo $output;
+echo '<br>';
 include 'templates/header.html.php'; //html navigation to sections
 
-include 'includes/dbconnect.inc.php'; //connection to the database
-//include 'templates/output.html.php'; //was connection to database established correctly?
 
 if(isset($_GET['addquestion'])) //this tracks if link with href="?addsentence" is clicked
 {
@@ -46,12 +60,3 @@ if(isset($_POST['polla'])) //this tracks if test form has been submitted
     include 'includes/processquiz.inc.php'; //this compares user answer with row
     include 'templates/output.html.php';
 }
-
-
-
-/*
-header('Location: .');
-header("Location: http://www.google.com");
-exit();
-//this code will redirect us back to the controller from any template or include
- */

@@ -2,7 +2,7 @@
 
 try
 {
-    $sql = "SELECT spanish_sen FROM sentences WHERE id=86";
+    $sql = "SELECT qtext1 FROM questions WHERE id=3";
     $result = $pdo->query($sql);
 }
 
