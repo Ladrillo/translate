@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 
 <html lang="es">
 
@@ -7,8 +7,9 @@
     <title>Intro Form</title>
 </head>
 
-<body>
+<body>-->
     <div class="container">
+        <h3>This is where you populate the db with questions:</h3>
         <form action="?" method="post">
             <label for="qtext1">Question Text 1: <br><textarea id="qtext1" name="qtext1" rows="2" cols="100" maxlength="200"></textarea></label><br>
             <label for="qtext2">Question Text 2: <br><textarea id="qtext2" name="qtext2" rows="2" cols="100" maxlength="200"></textarea></label><br>

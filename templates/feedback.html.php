@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Output</title>
+    <title>Feedback</title>
 </head>
 
 <body>-->
-    <div class="container">
-        <p><?php echo $output; ?></p>
-    </div>
+<div class="container">
+    <h1><?php echo $andtheansweris ?></h1>
+</div>
 <!--</body>
 
 </html>-->

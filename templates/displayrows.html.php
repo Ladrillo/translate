@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -6,7 +6,7 @@
     <title>Sentences</title>
 </head>
 
-<body>
+<body>-->
     <div class="container">
         <h3>Here are the questions in the database:</h3>
         <?php foreach ($sentences as $sentence): ?>

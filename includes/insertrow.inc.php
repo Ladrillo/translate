@@ -33,12 +33,9 @@ try
 
     $sqlprep->execute();
 
-
     $output = 'Question included successfully!';
 }
 catch (PDOException $e)
 {
     $output = 'Error fetching results: ' . $e->getMessage();
 }
-
-//header('Location: .');
